@@ -16,9 +16,10 @@ def predict():
         if file.filename.endswith('.json'):
             file_content = file.read()
             df = pd.read_json(io.BytesIO(file_content))
+            print(df)
 
             # Preprocess the JSON data
-            df = df.iloc[:, 0:42]
+            
             df.columns = ['duration', 'protocol_type', 'service', 'flag', 'src_bytes', 'dst_bytes', 'land', 'wrong_fragment',
                           'urgent', 'hot', 'num_failed_logins', 'logged_in', 'num_compromised', 'root_shell', 'su_attempted',
                           'num_root', 'num_file_creations', 'num_shells', 'num_access_files', 'num_outbound_cmds',
@@ -26,16 +27,9 @@ def predict():
                           'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate',
                           'dst_host_count', 'dst_host_srv_count', 'dst_host_same_srv_rate', 'dst_host_diff_srv_rate',
                           'dst_host_same_src_port_rate', 'dst_host_srv_diff_host_rate', 'dst_host_serror_rate',
-                          'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate', 'label']
+                          'dst_host_srv_serror_rate', 'dst_host_rerror_rate', 'dst_host_srv_rerror_rate']
 
-            df['label'].replace({'normal': 0, 'neptune': 1, 'back': 1, 'land': 1, 'pod': 1, 'smurf': 1, 'teardrop': 1,
-                                 'mailbomb': 1, 'apache2': 1, 'processtable': 1, 'udpstorm': 1, 'worm': 1,
-                                 'ipsweep': 0, 'nmap': 0, 'portsweep': 0, 'satan': 0, 'mscan': 0, 'saint': 0,
-                                 'ftp_write': 0, 'guess_passwd': 0, 'imap': 0, 'multihop': 0, 'phf': 0, 'spy': 0,
-                                 'warezclient': 0, 'warezmaster': 0, 'sendmail': 0, 'named': 0, 'snmpgetattack': 0,
-                                 'snmpguess': 0, 'xlock': 0, 'xsnoop': 0, 'httptunnel': 0, 'buffer_overflow': 0,
-                                 'loadmodule': 0, 'perl': 0, 'rootkit': 0, 'ps': 0, 'sqlattack': 0, 'xterm': 0},
-                                inplace=True)
+           
 
             df['protocol_type'].replace({'udp': 0, 'tcp': 1, 'icmp': 2}, inplace=True)
 
@@ -61,8 +55,8 @@ def predict():
             df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
             
             # Make predictions using the loaded model
-            predictions = model.predict(df_scaled)[0]
-            labels = ['Non-DoS' if pred == 0 else 'DoS' for pred in predictions]
+            predictions = model.predict(df_scaled)
+            labels = ['NonDoS' if pred == 0 else 'DoS' for pred in predictions]
 
             response_data = {"predictions": labels}
             return jsonify(response_data)

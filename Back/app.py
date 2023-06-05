@@ -68,7 +68,7 @@ def predict():
             df_scaled = scaler.fit_transform(df.iloc[:, :-1])
             df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
 
-            attaque=df['label']
+            attaque=df.iloc[:, -1]
 
 
             # Check if all the selected features are present in the prediction data Algo1
@@ -100,17 +100,17 @@ def predict():
             
             # Make predictions using the loaded model
             predictions = model.predict(df_selected)
-            labels = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else '' for pred, att in zip(predictions, attaque)]
+            labels = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions, attaque)]
             
 
              # Make predictions using the loaded model
             predictions2 = model2.predict(df_selected2)
-            labels2 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else 'Correct ' for pred, att in zip(predictions2, attaque)]
+            labels2 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions2, attaque)]
 
 
              # Make predictions using the loaded model
             predictions3 = model3.predict(df_selected3)
-            labels3 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else 'correct' for pred, att in zip(predictions3, attaque)]
+            labels3 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions3, attaque)]
 
             response_data = {"predictions": labels}
             response_data2 = {"predictions": labels2}

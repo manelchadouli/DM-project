@@ -64,8 +64,8 @@ const App = () => {
           const { data, data2, data3 } = response.data;
           const predictions = {
             predictions1: data.predictions,
-            predictions2: data2.predictions,
-            predictions3: data3.predictions
+            predictions2: data2.predictions5,
+            predictions3: data3.predictions6
           };
           setPredictions(predictions);
           setError('');
@@ -129,10 +129,13 @@ const App = () => {
 
       <button className='button-17' onClick={handlePredict}>Predict</button>
       {predictions && (
+        <div className='prediction-tableee'>
         <table className='prediction-table'>
         <thead>
           <tr>
-            <th>Algorithme</th>
+            <th>Algorithme de feature selection</th>
+            <th>Algorithme de Classification</th>
+
             <th>Prediction</th>
             
           </tr>
@@ -140,19 +143,22 @@ const App = () => {
         <tbody>
            
               <tr >
-                <td>RF+DT</td>
+                <td>RFE</td>
+                <td>Decision Tree</td>
                 <td>  {predictions.predictions1.map((prediction, index) => (
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
               <tr >
-                <td>RFE+RF</td>
+                <td>RandomForest </td>
+                <td>RandomForest </td>
                 <td>  {predictions.predictions2.map((prediction, index) => (
               <li key={index}>{prediction}</li>
             ))}</td>
               </tr>
               <tr >
-                <td>CFS+DT</td>
+                <td>CFS</td>
+                <td>Decision Tree</td>
                 <td>{predictions.predictions3.map((prediction, index) => (
               <li key={index}>{prediction}</li>  ))}
               </td>
@@ -160,63 +166,15 @@ const App = () => {
             
           </tbody>
         </table>
+        </div>
         )}
-        {/* <div>
-          <h3>Predictions 1:</h3>
-          <ul>
-            {predictions.predictions1.map((prediction, index) => (
-              <li key={index}>{prediction}</li>
-            ))}
-          </ul>
-
-          <h3>Predictions 2:</h3>
-          <ul>
-            {predictions.predictions2.map((prediction, index) => (
-              <li key={index}>{prediction}</li>
-            ))}
-          </ul>
-
-          <h3>Predictions 3:</h3>
-          <ul>
-            {predictions.predictions3.map((prediction, index) => (
-              <li key={index}>{prediction}</li>
-            ))}
-          </ul>
-        </div> */}
-      
-      {/* {prediction.length > 0 && !error && (
-        <table className='prediction-table'>
-          <thead>
-            <tr>
-              <th>Algorithme</th>
-              <th>Prediction</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-           
-              <tr >
-                <td>RF+DT</td>
-                <td>{prediction}</td>
-              </tr>
-              <tr >
-                <td>RFE+RF</td>
-                <td>{prediction}</td>
-              </tr>
-              <tr >
-                <td>CFS+DT</td>
-                <td>{prediction}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      )} */}
+        
             {error && <p>Error: {error}</p>}
 
       </div>
       </div>
 
-      {/* <div className='container-UNSW' >
+       {/* <div className='container-UNSW' >
        <h1> UNSW_NB15</h1>
 
       <div className='container-prediction'>
@@ -252,8 +210,8 @@ const App = () => {
       {error1 && <p>Error: {error1}</p>}
 
       </div>
-      </div> */}
- 
+      </div> 
+  */}
       
 
       

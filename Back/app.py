@@ -57,19 +57,19 @@ def predict():
                                    'uucp_path': 65, 'vmnet': 66, 'whois': 67, 'X11': 68, 'Z39_50': 69}, inplace=True)
             
             df['label'].replace({ 
-                                  'sendmail':0, 'mailbomb':0, 'imap':0, 'neptune':1, 'rootkit':0, 'back':0, 'udpstorm':1, 'phf':0, 'ftp_write':0,
-                                'guess_passwd':0, 'pod':1, 'mscan':0, 'land':1, 'teardrop':1, 'sqlattack':0, 'named':0, 'warezmaster':0, 'multihop':0, 'loadmodule':0, 
-                                    'ps':0, 'warezclient':0, 'worm':0, 'snmpgetattack':0, 'httptunnel':0, 'portsweep':0, 'normal':0, 'perl':0, 'buffer_overflow':0, 'xlock':0, 
-                                    'ipsweep':0, 'apache2':1, 'processtable':0, 'xterm':0, 'spy':0, 'snmpguess':0, 'nmap':0, 'smurf':1, 'saint':1, 'xsnoop':0, 'satan':0
-                                    },inplace = True)
+'sendmail':0, 'mailbomb':0, 'imap':0, 'neptune':1, 'rootkit':0, 'back':0, 'udpstorm':1, 'phf':0, 'ftp_write':0,
+'guess_passwd':0, 'pod':1, 'mscan':0, 'land':1, 'teardrop':1, 'sqlattack':0, 'named':0, 'warezmaster':0, 'multihop':0, 'loadmodule':0, 
+'ps':0, 'warezclient':0, 'worm':0, 'snmpgetattack':0, 'httptunnel':0, 'portsweep':0, 'normal':0, 'perl':0, 'buffer_overflow':0, 'xlock':0, 
+'ipsweep':0, 'apache2':1, 'processtable':0, 'xterm':0, 'spy':0, 'snmpguess':0, 'nmap':0, 'smurf':1, 'saint':1, 'xsnoop':0, 'satan':0
+  },inplace = True)
+           
+            attaque=df.iloc[:, -1]
 
             # Scaling
             scaler = MinMaxScaler()
             df_scaled = scaler.fit_transform(df.iloc[:, :-1])
             df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
-
-            attaque=df.iloc[:, -1]
-
+           
 
             # Check if all the selected features are present in the prediction data Algo1
             missing_features = set(selected_features) - set(df.columns)
@@ -100,24 +100,21 @@ def predict():
             
             # Make predictions using the loaded model
             predictions = model.predict(df_selected)
-            labels = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions, attaque)]
+            labels = ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions, attaque)]
             
 
              # Make predictions using the loaded model
             predictions2 = model2.predict(df_selected2)
-            labels2 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions2, attaque)]
+            labels2 = ['False Non DOS (False Negative) ' if (pred2 == 0 and att == 1) else 'False DoS (False positive) ' if (pred2 == 1 and att == 0) else ' True Nos dos ' if (pred2 == 0 and att == 0) else ' true dos ' if (pred2 == 1 and att == 1 ) else ' 'for pred2, att in zip(predictions2, attaque)]
 
 
              # Make predictions using the loaded model
             predictions3 = model3.predict(df_selected3)
-            labels3 = ['Non DOS False Negative' if (pred == 0 and att == 1) else 'DoS False Positive' if (pred == 1 and att == 0) else ' Nos dos Correct' if (pred == 0 and att == 0) else ' dos Correct' if (pred == 1 and att == 1 ) else 'Correct 'for pred, att in zip(predictions3, attaque)]
+            labels3 = ['False Non DOS (False Negative) ' if (pred3 == 0 and att == 1) else 'False DoS (False positive) ' if (pred3 == 1 and att == 0) else ' True Nos dos ' if (pred3 == 0 and att == 0) else ' true dos ' if (pred3 == 1 and att == 1 ) else ' 'for pred3, att in zip(predictions3, attaque)]
 
             response_data = {"predictions": labels}
-            response_data2 = {"predictions": labels2}
-            response_data3 = {"predictions": labels3}
-            
- 
-            
+            response_data2 = {"predictions5": labels2}
+            response_data3 = {"predictions6": labels3}
 
             response_data = {
               "data": response_data,

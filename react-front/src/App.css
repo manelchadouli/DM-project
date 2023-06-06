@@ -61,9 +61,8 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 .container-prediction{
   display: grid;
   grid-template-columns: 110%;
-  gap: 80px;
-  padding: 10%;
-
+  gap: 60px;
+  padding: 7%;
 }
 
 
@@ -157,4 +156,8 @@ tbody td {
 }
 thead th, tfoot th {
 color:#7D12FF;
+}
+.prediction-tableee{
+  height: 160px;
+  overflow: scroll;
 }

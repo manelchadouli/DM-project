@@ -1,27 +1,43 @@
 .Sidebar {
   background-color: #f1f1f1;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: width 0.3s ease;
+}
+
+.Sidebar.collapsed {
+  width: 60px;
 }
 
 .Sidebar ul {
   list-style-type: none;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 
 .Sidebar ul li {
   font-family: Arial, sans-serif;
-  padding: 10px;
-  margin-left: 20px;
+  margin-left: 0;
+  position: relative;
+  transition: margin-left 0.3s ease;
 }
 
 .Sidebar ul li a {
   text-decoration: none;
   color: #333;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.Sidebar ul li a:hover {
+  background-color: #e5e5e5;
 }
 
 .Sidebar ul li button {
@@ -29,12 +45,26 @@
   cursor: pointer;
   background-color: #f1f1f1;
   color: #333;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.Sidebar ul li button:hover {
+  background-color: #e5e5e5;
 }
 
 .Dropdown {
   display: none;
   background-color: #f9f9f9;
   padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 999;
+  width: 200px;
 }
 
 .Dropdown li {
@@ -44,6 +74,13 @@
 .Dropdown li a {
   color: #333;
   text-decoration: none;
+  display: block;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.Dropdown li a:hover {
+  background-color: #e5e5e5;
 }
 
 .Sidebar ul li:hover .Dropdown {
@@ -56,7 +93,6 @@
   align-items: center;
   margin-bottom: 10px;
   margin-top: 20px;
-  margin-left: -25px;
 }
 
 .menu-image {
@@ -70,23 +106,55 @@
     width: 100%;
     height: auto;
     position: static;
-  }
-
-  .Sidebar ul {
-    padding: 10px 0;
+    box-shadow: none;
   }
 
   .Sidebar ul li {
     margin-left: 0;
     text-align: center;
+    padding: 10px 0;
+    transition: margin-left 0.3s ease;
+  }
+
+  .Sidebar ul li a,
+  .Sidebar ul li button {
+    padding: 10px;
+  }
+
+  .Dropdown {
+    position: static;
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .Dropdown li a {
+    padding: 5px;
   }
 
   .image-container {
     margin-left: 0;
   }
-  
+
   .menu-image {
     width: 60px;
     height: 60px;
   }
+}
+
+/* Hover Styles */
+.Sidebar:hover {
+  width: 200px;
+}
+
+.Sidebar:hover .Sidebar ul li {
+  margin-left: 20px;
+}
+
+.Sidebar.collapsed .Sidebar ul li {
+  margin-left: -140px;
+}
+
+.Sidebar.collapsed:hover .Sidebar ul li {
+  margin-left: 0;
 }

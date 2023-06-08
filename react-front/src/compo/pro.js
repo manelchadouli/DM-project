@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './pro.css';
+import { FaHome, FaChartBar, FaUser, FaCog } from 'react-icons/fa';
+
 
 function Profil({ toggleDropdown, isDropdownOpen }) {
+  const [isSidebarCollapsed, setSidebarCollapsed] = useState(true);
+
+  const handleMouseEnter = () => {
+    setSidebarCollapsed(false);
+  };
+
+  const handleMouseLeave = () => {
+    setSidebarCollapsed(true);
+  };
   return (
-    <div className="Sidebar">
+    <div  className={`Sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}>
         <div className="image-container">
             <img src="/photos/menu_icon.gif" alt="menu" className="menu-image"/>
         </div>
       <ul>
         <li>
          <button>
-          <Link to="/">Home</Link>
+         <Link to="/">
+    <FaHome />
+    Home
+  </Link>
         </button> 
         </li>
         <li>
@@ -28,7 +44,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-          <button onClick={toggleDropdown}>Features</button>
+          <button onClick={toggleDropdown}><FaCog/>Features</button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -44,7 +60,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-          <button onClick={toggleDropdown}>Improvements</button>
+          <button onClick={toggleDropdown}><FaChartBar/>Improvements</button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -81,6 +97,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           </button>
         </li>
       </ul>
+      
     </div>
   );
 }

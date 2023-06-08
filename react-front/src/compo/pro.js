@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './pro.css';
-import { FaHome, FaChartBar, FaUser, FaCog } from 'react-icons/fa';
+import { FaHome, FaChartBar,  FaCog,FaChartArea,FaBalanceScale,FaUps } from 'react-icons/fa';
 
 
 function Profil({ toggleDropdown, isDropdownOpen }) {
@@ -25,13 +25,13 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
         <li>
          <button>
          <Link to="/">
-    <FaHome />
-    Home
+          <FaHome/>
+    <span>Home</span>
   </Link>
         </button> 
         </li>
         <li>
-          <button onClick={toggleDropdown}>Trainnig_results</button>
+          <button onClick={toggleDropdown}><FaChartArea/><span>Trainnig_results</span></button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -44,7 +44,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-          <button onClick={toggleDropdown}><FaCog/>Features</button>
+          <button onClick={toggleDropdown}><FaCog/><span>Features</span></button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -60,7 +60,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-          <button onClick={toggleDropdown}><FaChartBar/>Improvements</button>
+          <button onClick={toggleDropdown}><FaUps/><span>Improvements</span></button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -76,7 +76,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-          <button onClick={toggleDropdown}>Statistics</button>
+          <button onClick={toggleDropdown}><FaChartBar/><span>Statistics</span></button>
           {isDropdownOpen && (
             <ul className="Dropdown">
               <li>
@@ -93,7 +93,7 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
         </li>
         <li>
             <button>
-          <Link to="/predict">Predict</Link>
+          <Link to="/predict"><FaBalanceScale/><span>Predict</span></Link>
           </button>
         </li>
       </ul>

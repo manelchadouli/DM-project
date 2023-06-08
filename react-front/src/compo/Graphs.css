@@ -8,9 +8,12 @@
   
   .Nsl_Imp img {
     width: 100%;
-
+    transition: transform 0.3s ease; /* Add a smooth animation transition */
     height: auto;
 
+  }
+  .Nsl_Imp:hover img{
+    transform: scale(1.1); /* Add an animated effect on hover */
   }
   
   @media (min-width: 768px) {
@@ -28,10 +31,13 @@
     margin-top: 20px;
     margin-left: 200px;
   }
-  .UNSW_Imp{
-    width: 100%;
-
+  .UNSW_Imp img{
+    width: 80%;
+    transition: transform 0.3s ease; /* Add a smooth animation transition */
     height: auto;
+  }
+  .UNSW_Imp:hover img{
+    transform: scale(1.1); /* Add an animated effect on hover */
   }
   @media (min-width: 768px) {
     .UNSW_Imp img {

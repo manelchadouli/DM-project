@@ -21,6 +21,7 @@ const Graphs1 = ()=>{
            <div  className='Nsl_Imp'>
             <img src='/photos/msg-678915148-40930 (1).jpg' class="img-fluid" alt='accI'/>
              <img src='/photos/msg-678915148-40929 (1).jpg'  class="img-fluid" alt='falsI'/> 
+             <img src='/photos/photo1686224874.jpeg'  class="img-fluid" alt='falsI'/> 
            </div>
            
 

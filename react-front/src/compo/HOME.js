@@ -4,6 +4,7 @@ import Profil from "./pro";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './home.css';
 
+
 const Home = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
  
@@ -83,7 +84,8 @@ const Home = () => {
                               <h3 className="photo-title">confusion Matrix</h3>
                               <img src="/photos/confusion_matrix.png" alt="confusion Matrix" />
                           </div>
-                      </div></>
+                      </div>
+               </>
         )}
         {switch2 && (
           <><div className="description-container">
@@ -121,6 +123,7 @@ const Home = () => {
                 <img src="/photos/2.PNG" alt="afterbalancing" />
               </div>
                       </div>
+                 
                       </>
         )}
       </div>

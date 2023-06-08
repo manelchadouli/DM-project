@@ -19,6 +19,9 @@
   color: #333;
   padding: 10px;
   cursor: pointer;
+  border-radius: 4px; /* Add border-radius for rounded corners */
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
 }
 
 .switch-button.active {
@@ -29,22 +32,43 @@
 .description-container {
   background-color: #f1f1f1;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .description-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+.description-container .description-content {
+  flex-basis: 70%;
+  margin-right: 20px;
+} 
+
 }
 
+
 .description-container h2 {
-  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
 }
-.photo {
-  flex-basis: calc(33.33% - 2cm); /* Adjust the width of each photo container based on the available space */
+ .photo {
+  flex-basis: calc(33.33% - 2cm); 
   background-color: #f2f2f2;
   padding: 8px;
-  margin-right: 2cm; /* Space between each photo container */
+  margin-right: 2cm; 
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   overflow: hidden;
-}
+} 
 
 .photo img {
   width: 100%;
@@ -74,16 +98,35 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: 110%;
+  
+  /* width: 100%; */
 }
 
-.photo {
-  width: 33.33%;
+ .photo {
+  /* width: 33.33%; */
+  /* flex: 0 0 auto; */
+  /* width: 33.33%; */
+  /* margin-right: 20px; */
   margin-bottom: 20px;
-  box-sizing: border-box;
-  padding-right: 20px;
+  /* box-sizing: border-box;
+  padding-right: 20px; */
+} 
+
+.photo:last-child {
+  margin-right: 0;
+}
+.description-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
 }
 
-.photo:nth-child(3n) {
-  padding-right: 0;
+.photo-container-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  position: relative;
 }
+
 

@@ -16,6 +16,7 @@ selector2, selected_features2 = load('MyFeatureSelection2.joblib')
 
 model3 = load('MyModal3.joblib')
 selector3, selected_features3 = load('MyFeatureSelection3.joblib')
+NslScaler = load('NslScaler.joblib') 
 
 CORS(app)
 
@@ -66,10 +67,12 @@ def predict():
             attaque=df.iloc[:, -1]
 
             # Scaling
-            scaler = MinMaxScaler()
-            df_scaled = scaler.fit_transform(df.iloc[:, :-1])
-            df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
+            # scaler = MinMaxScaler()
+            # df_scaled = scaler.fit_transform(df.iloc[:, :-1])
+            # df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
            
+            df_scaled=pd.DataFrame(NslScaler.fit_transform(df.iloc[:, :-1]), 
+            columns=df.iloc[:, :-1].columns, index=df.iloc[:, :-1].index)
 
             # Check if all the selected features are present in the prediction data Algo1
             missing_features = set(selected_features) - set(df.columns)

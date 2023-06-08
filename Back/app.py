@@ -71,7 +71,7 @@ def predict():
             # df_scaled = scaler.fit_transform(df.iloc[:, :-1])
             # df_scaled = pd.DataFrame(df_scaled, columns=df.columns[:-1])
            
-            df_scaled=pd.DataFrame(NslScaler.fit_transform(df.iloc[:, :-1]), 
+            df_scaled=pd.DataFrame(NslScaler.transform(df.iloc[:, :-1]), 
             columns=df.iloc[:, :-1].columns, index=df.iloc[:, :-1].index)
 
             # Check if all the selected features are present in the prediction data Algo1

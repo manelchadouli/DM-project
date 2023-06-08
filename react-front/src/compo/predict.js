@@ -41,6 +41,8 @@ const Predict = ()=>{
     //     setError1('No file selected');
     //   }
     // };
+
+    
     //////end of file unsw 
   
     const handlePredict = async () => {

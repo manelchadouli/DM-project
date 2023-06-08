@@ -1,0 +1,92 @@
+.Sidebar {
+  background-color: #f1f1f1;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.Sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.Sidebar ul li {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.Sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.Sidebar ul li button {
+  border: none;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.Dropdown {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.Dropdown li {
+  padding-left: 0;
+}
+
+.Dropdown li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.Sidebar ul li:hover .Dropdown {
+  display: block;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: -25px;
+}
+
+.menu-image {
+  width: 80px;
+  height: 80px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .Sidebar ul {
+    padding: 10px 0;
+  }
+
+  .Sidebar ul li {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .image-container {
+    margin-left: 0;
+  }
+  
+  .menu-image {
+    width: 60px;
+    height: 60px;
+  }
+}

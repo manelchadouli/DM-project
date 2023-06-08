@@ -1,0 +1,89 @@
+.Home {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  margin-left: 200px; /* To account for the Sidebar width */
+  padding: 20px;
+}
+
+.switch-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.switch-button {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.switch-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.description-container {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.description-container h2 {
+  margin-top: 0;
+}
+.photo {
+  flex-basis: calc(33.33% - 2cm); /* Adjust the width of each photo container based on the available space */
+  background-color: #f2f2f2;
+  padding: 8px;
+  margin-right: 2cm; /* Space between each photo container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Add a smooth animation transition */
+}
+
+.photo:hover img {
+  transform: scale(1.1); /* Add an animated effect on hover */
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.photo-container {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.photo {
+  width: 33.33%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+.photo:nth-child(3n) {
+  padding-right: 0;
+}
+

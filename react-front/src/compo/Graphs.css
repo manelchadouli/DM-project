@@ -1,0 +1,40 @@
+.Nsl_Imp {
+    display: block;
+    /*justify-content: space-around; */
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+  
+  .Nsl_Imp img {
+    width: 100%;
+
+    height: auto;
+
+  }
+  
+  @media (min-width: 768px) {
+    .Nsl_Imp img {
+      max-width: 80%;
+    }
+  
+
+  }
+
+  .UNSW_Imp{
+    display: block;
+    /*justify-content: space-around; */
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+  .UNSW_Imp{
+    width: 100%;
+
+    height: auto;
+  }
+  @media (min-width: 768px) {
+    .UNSW_Imp img {
+      max-width: 100%;
+    }
+  }

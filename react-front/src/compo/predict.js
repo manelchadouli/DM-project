@@ -101,11 +101,11 @@ const handlePredictUnsw = async () => {
     if (response1.data.error) {
       setError1(response1.data.error);
       setPrediction1('');
+     
     } else {
-      const { data4 ,data5 ,data6,data7} = response1.data;
+      const { data4 ,data6,data7} = response1.data;
           const prediction1 = {
             predictions1: data4.predictions4,
-            predictions2: data5.predictions5,
             predictions3: data6.predictions6,
             predictions4: data7.predictions7,
           };
@@ -147,7 +147,7 @@ const handlePredictUnsw = async () => {
             <th>Classifier</th>
 
             <th>Prediction</th>
-            
+            <th>Alarm</th>
           </tr>
         </thead>
         <tbody>
@@ -155,23 +155,53 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>RFE</td>
                 <td>Decision Tree</td>
+                <td> {predictions.predictions1.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index}>Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
                 <td class="predict">  {predictions.predictions1.map((prediction, index) => (
-               <li key={index}>{prediction} </li>
+               <li key={index} style={{color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
             ))}</td>
               </tr>
               
               <tr >
                 <td>RandomForest </td>
                 <td>RandomForest </td>
+                <td> {predictions.predictions2.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index}>Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
                 <td class="predict">  {predictions.predictions2.map((prediction, index) => (
-              <li key={index}>{prediction}</li>
+              <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>
             ))}</td>
               </tr>
               <tr >
                 <td>CFS</td>
                 <td>Decision Tree</td>
+                <td> {predictions.predictions3.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index}>Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
                 <td class="predict">{predictions.predictions3.map((prediction, index) => (
-              <li key={index}>{prediction}</li>  ))}
+              <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>  ))}
               </td>
               </tr>
             
@@ -207,7 +237,7 @@ const handlePredictUnsw = async () => {
             <th>Classifier</th>
 
             <th>Prediction</th>
-            
+            <th>Alarm</th>
           </tr>
         </thead>
         <tbody>
@@ -215,23 +245,53 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>CHI2</td>
                 <td>KNN</td>
+                <td> {prediction1.predictions1.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index}>Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
                 <td class="predict">  {prediction1.predictions1.map((prediction, index) => (
-               <li key={index}>{prediction} </li>
+               <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
             ))}</td>
               </tr>
            
               <tr >
                 <td>Mutual Info</td>
                 <td>KNN</td>
+                <td> {prediction1.predictions3.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index} >Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
                 <td class="predict">  {prediction1.predictions3.map((prediction, index) => (
-               <li key={index}>{prediction} </li>
+               <li key={index} style={{color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
             ))}</td>
               </tr>
               <tr >
                 <td>RFE</td>
                 <td>KNN</td>
-                <td class="predict">  {prediction1.predictions4.map((prediction, index) => (
-               <li key={index}>{prediction} </li>
+                <td> {prediction1.predictions4.map((prediction, index) => {
+    if (prediction === 'False Alarm') {
+      return <li key={index}>Nos Dos</li>;
+    } else if(prediction === 'False Dos') {
+      // Add your alternative rendering here
+      return <li key={index}>Dos</li>;
+    }else if(prediction === 'True Nos Dos'){
+      return <li key={index}>Nos Dos</li>;
+    }else return <li key={index}>Dos</li>;
+  })}</td>
+                <td >  {prediction1.predictions4.map((prediction, index) => (
+               <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
             ))}</td>
               </tr>
             
@@ -252,6 +312,7 @@ const handlePredictUnsw = async () => {
 
 
     )
+    
 
 }
 export default Predict;

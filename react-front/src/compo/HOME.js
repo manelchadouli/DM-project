@@ -17,23 +17,9 @@ const Home = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  const data4 = [
-    { label: '0', value: 2 },
-    { label: '1', value: 0.05 },
-  ];
-  const data5 = [
-    { label: '0', value: 13000 },
-    { label: '1', value: 13000 },
-  ];
 
-  const data6 = [
-    { classifier: 'RandomForestClassifier', Accuracy: 0.971913939, Precision: 0.186284019, Recall: 0.998165699, F1Score: 0.313972497, FalseAlarmRate: 0.028256188 },
-    { classifier: 'DecisionTreeClassifier', Accuracy: 0.971398201, Precision: 0.181571356, Recall: 0.981351269, F1Score: 0.306443914, FalseAlarmRate: 0.028666301 },
-    { classifier: 'LogisticRegression', Accuracy: 0.754252869, Precision: 0.023082657, Recall: 0.899419138, F1Score: 0.045010174, FalseAlarmRate: 0.246687892 },
-    { classifier: 'K-Nearest Neighbors', Accuracy: 0.928280939, Precision: 0.077788812, Recall: 0.933965148, F1Score: 0.143616021, FalseAlarmRate: 0.071755898 },
-    { classifier: 'Naive Bayes Classifier', Accuracy: 0.753457609, Precision: 0.021325024, Recall: 0.830632834, F1Score: 0.041582492, FalseAlarmRate: 0.247042531 },
-    { classifier: 'SVM', Accuracy: 0.57737643, Precision: 0.012299431, Recall: 0.815041272, F1Score: 0.024233169, FalseAlarmRate: 0.424163776 },
-  ];
+
+
   const [switch1, setSwitch1] = useState(false);
   const [switch2, setSwitch2] = useState(false);
 

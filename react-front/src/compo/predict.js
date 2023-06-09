@@ -155,7 +155,7 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>RFE</td>
                 <td>Decision Tree</td>
-                <td>  {predictions.predictions1.map((prediction, index) => (
+                <td class="predict">  {predictions.predictions1.map((prediction, index) => (
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
@@ -163,14 +163,14 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>RandomForest </td>
                 <td>RandomForest </td>
-                <td>  {predictions.predictions2.map((prediction, index) => (
+                <td class="predict">  {predictions.predictions2.map((prediction, index) => (
               <li key={index}>{prediction}</li>
             ))}</td>
               </tr>
               <tr >
                 <td>CFS</td>
                 <td>Decision Tree</td>
-                <td>{predictions.predictions3.map((prediction, index) => (
+                <td class="predict">{predictions.predictions3.map((prediction, index) => (
               <li key={index}>{prediction}</li>  ))}
               </td>
               </tr>
@@ -215,7 +215,7 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>CHI2</td>
                 <td>KNN</td>
-                <td>  {prediction1.predictions1.map((prediction, index) => (
+                <td class="predict">  {prediction1.predictions1.map((prediction, index) => (
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
@@ -223,14 +223,14 @@ const handlePredictUnsw = async () => {
               <tr >
                 <td>Mutual Info</td>
                 <td>KNN</td>
-                <td>  {prediction1.predictions3.map((prediction, index) => (
+                <td class="predict">  {prediction1.predictions3.map((prediction, index) => (
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
               <tr >
                 <td>RFE</td>
                 <td>KNN</td>
-                <td>  {prediction1.predictions4.map((prediction, index) => (
+                <td class="predict">  {prediction1.predictions4.map((prediction, index) => (
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>

@@ -63,7 +63,7 @@
 
 .container-prediction p{
   font-weight: bold;
-  color: #7D12FF;
+  color: #ee4b4c;
   text-align: center;
 }
 
@@ -176,28 +176,11 @@ label.label input[type="file"] {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
-/* Additional colors */
-.prediction-table {
-  background-color: #565656;
+.prediction-table th {
+  background-color: #2b2b2b;
+  color: white;
 }
-
-.prediction-table .cell-1 {
-  background-color: #ee4b4c;
-}
-
-.prediction-table .cell-2 {
-  background-color: #000000;
-}
-
-.prediction-table .cell-3 {
-  background-color: #565656;
-}
-
-.prediction-table .cell-4 {
-  background-color: #a8a8a8;
-}
-
-.prediction-table .cell-5 {
-  background-color: #ffffff;
+.prediction-table li {
+  list-style-type:none;
 }
 

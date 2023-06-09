@@ -1,5 +1,5 @@
   .Sidebar {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -40,17 +40,17 @@
   }
 
   .Sidebar ul li a:hover {
-    background-color: #e5e5e5;
+    background-color: #a368eb;
   }
 
   .Sidebar ul li button {
     border: none;
     cursor: pointer;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     color: #333;
     display: block;
     padding: 15px;
-    
+    margin-left: -5px;
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: left;
@@ -59,7 +59,7 @@
   }
 
   .Sidebar ul li button:hover {
-    background-color: #e5e5e5;
+    background-color: #a368eb;
   }
 
   .Dropdown {
@@ -87,7 +87,7 @@
   }
 
   .Dropdown li a:hover {
-    background-color: #e5e5e5;
+    background-color: #a368eb;
   }
 
   .Sidebar ul li:hover .Dropdown {
@@ -171,9 +171,9 @@
     margin-left: -140px;
   }
 
-  .Sidebar.collapsed:hover .Sidebar ul li {
+  /* .Sidebar.collapsed:hover .Sidebar ul li {
     margin-left: 0;
-  }
+  } */
   .Sidebar ul li span {
     display: none;
   }
@@ -199,5 +199,5 @@
     transition: background-color 0.3s ease;
   }
   .Sidebar ul li a:hover {
-    background-color: #e5e5e5;
+    background-color: #a368eb;
   }

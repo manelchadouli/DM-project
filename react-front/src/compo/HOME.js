@@ -60,28 +60,28 @@ const Home = () => {
                           fully reflect the current threat landscape as it was created in 2009.</p>
                   </div><div className="photo-container">
                           <div className="photo">
-                              <h3 className="photo-title">Before Balancing</h3>
-                              <img src="/photos/before.png" alt="beforebalancing" />
+                              {/* <h3 className="photo-title">Before Balancing</h3> */}
+                              <img src="/photos/flags.png" alt="beforebalancing" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">After Balancing</h3>
-                              <img src="/photos/after.png" alt="afterbalancing" />
+                              {/* <h3 className="photo-title">After Balancing</h3> */}
+                              <img src="/photos/labeldestrubution.png" alt="afterbalancing" />
                           </div>
 
                           <div className="photo">
-                              <h3 className="photo-title">Chi2 feauture selection</h3>
+                              {/* <h3 className="photo-title">Chi2 feauture selection</h3> */}
                               <img src="/photos/chi2.png" alt="chi2" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">protocols</h3>
+                              {/* <h3 className="photo-title">protocols</h3> */}
                               <img src="/photos/protocole.png" alt="afterbalancing" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">Correlation Matrix</h3>
+                              {/* <h3 className="photo-title">Correlation Matrix</h3> */}
                               <img src="/photos/corr.png" alt="corr" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">confusion Matrix</h3>
+                              {/* <h3 className="photo-title">confusion Matrix</h3> */}
                               <img src="/photos/confusion_matrix.png" alt="confusion Matrix" />
                           </div>
                       </div>
@@ -99,27 +99,27 @@ const Home = () => {
                           intrusion detection systems against diverse threats.</p>
                   </div><div className="photo-container">
                           <div className="photo">
-                              <h3 className="photo-title">Initial</h3>
+                              {/* <h3 className="photo-title">Initial</h3> */}
                               <img src="/photos/metrics_df_init.png" alt="initial" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">Normalization</h3>
+                              {/* <h3 className="photo-title">Normalization</h3> */}
                               <img src="/photos/metrics_df_normalization.png" alt="normalization" />
                           </div>
                           <div className="photo">
-                              <h3 className="photo-title">RFE Feauture selection</h3>
+                              {/* <h3 className="photo-title">RFE Feauture selection</h3> */}
                               <img src="/photos/metrics_df_Rf_feature_selection.png" alt="RFE" />
                           </div>
                           <div className="photo">
-                <h3 className="photo-title">RFE confusion Matrix</h3>
+                {/* <h3 className="photo-title">RFE confusion Matrix</h3> */}
                 <img src="/photos/metrics_df_normalizationRF.png" alt="RFE" />
               </div>
               <div className="photo">
-                <h3 className="photo-title">Before Balancing</h3>
+                {/* <h3 className="photo-title">Before Balancing</h3> */}
                 <img src="/photos/1.PNG" alt="beforebalancing" />
               </div>
               <div className="photo">
-                <h3 className="photo-title">After Balancing</h3>
+                {/* <h3 className="photo-title">After Balancing</h3> */}
                 <img src="/photos/2.PNG" alt="afterbalancing" />
               </div>
                       </div>

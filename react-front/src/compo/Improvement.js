@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Profil from "./pro";
 import './pro.css';
-import './improvement.css'
-import './initial.css'
+// import './improvement.css'
+ import './initial.css'
+
 
 const Improvement= ()=>{
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);

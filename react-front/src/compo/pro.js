@@ -23,12 +23,12 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
         </div>
       <ul>
         <li>
-         <button>
+       
          <Link to="/">
           <FaHome/>
     <span>Home</span>
   </Link>
-        </button> 
+        
         </li>
         <li>
           <button onClick={toggleDropdown}><FaChartArea/><span>Trainnig_results</span></button>
@@ -92,9 +92,9 @@ function Profil({ toggleDropdown, isDropdownOpen }) {
           )}
         </li>
         <li>
-            <button>
+          
           <Link to="/predict"><FaBalanceScale/><span>Predict</span></Link>
-          </button>
+          
         </li>
       </ul>
       

@@ -14,7 +14,7 @@ const Graphs2 = ()=>{
     return(
         <div className='content'>
              <Profil toggleDropdown={toggleDropdown} isDropdownOpen={isDropdownOpen}/> 
-             <h1>UNSW_NB15 Imporvements</h1>
+             {/* <h1>UNSW_NB15 Imporvements</h1> */}
            <div  className='UNSW_Imp'>
             <img src='/photos/accuracy_improvement_plot.png' alt='accI'/>
              <img src='/photos/FalseAlarm_plot.png' alt='falsI'/> 

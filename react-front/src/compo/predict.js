@@ -137,13 +137,14 @@ const handlePredictUnsw = async () => {
 
 
       <button className='button-17' onClick={handlePredict}>Predict</button>
+      </div>
       {predictions && (
         <div className='prediction-tableee'>
         <table className='prediction-table'>
         <thead>
           <tr>
-            <th>Algorithme de feature selection</th>
-            <th>Algorithme de Classification</th>
+            <th>Selector</th>
+            <th>Classifier</th>
 
             <th>Prediction</th>
             
@@ -158,6 +159,7 @@ const handlePredictUnsw = async () => {
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
+              
               <tr >
                 <td>RandomForest </td>
                 <td>RandomForest </td>
@@ -180,7 +182,7 @@ const handlePredictUnsw = async () => {
         
             {error && <p>Error: {error}</p>}
 
-      </div>
+      
       </div>
       <div className='container-UNSW' >
        <h1>UNSW-NB15</h1>
@@ -195,13 +197,14 @@ const handlePredictUnsw = async () => {
 
 
       <button className='button-17' onClick={handlePredictUnsw}>Predict</button>
+      </div>
       {prediction1 && (
         <div className='prediction-tableee'>
         <table className='prediction-table'>
         <thead>
           <tr>
-            <th>Algorithme de feature selection</th>
-            <th>Algorithme de Classification</th>
+          <th>Selector</th>
+            <th>Classifier</th>
 
             <th>Prediction</th>
             
@@ -216,13 +219,7 @@ const handlePredictUnsw = async () => {
                <li key={index}>{prediction} </li>
             ))}</td>
               </tr>
-              <tr >
-                <td>Random Forest Selector</td>
-                <td>KNN</td>
-                <td>  {prediction1.predictions2.map((prediction, index) => (
-               <li key={index}>{prediction} </li>
-            ))}</td>
-              </tr>
+           
               <tr >
                 <td>Mutual Info</td>
                 <td>KNN</td>
@@ -245,7 +242,6 @@ const handlePredictUnsw = async () => {
         
             {error && <p>Error: {error}</p>}
 
-      </div>
       </div>
       
 

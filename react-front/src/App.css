@@ -3,7 +3,7 @@
   justify-content: space-between;
   height: 100vh;
   align-items: center;
-  background-color: #2b2b2b;
+  background-color: white;
   
 } 
 /* background-image: url("d1.png"); /* Replace "your-image-url.jpg" with the URL or path to your desired image */
@@ -63,7 +63,7 @@
 
 .container-prediction p{
   font-weight: bold;
-  color: #ee4b4c;
+  color: #26C6D0;
   text-align: center;
 }
 
@@ -71,7 +71,7 @@ h1{
   position: relative;
   margin-bottom: 5%;
   font-weight: bolder;
-  color: #ee4b4c;
+  color: #26C6D0;
   text-align: center;
 }
 
@@ -111,7 +111,7 @@ label.label input[type="file"] {
 .button-17 {
   align-items: center;
   appearance: none;
-  background-color: #ee4b4c;
+  background-color: #26C6D0;
   border-radius: 24px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
@@ -142,7 +142,7 @@ label.label input[type="file"] {
 }
 
 .button-17:hover {
-  background: #f36667;
+  background: #26C6D0;
   color: white;
 }
 
@@ -183,4 +183,3 @@ label.label input[type="file"] {
 .prediction-table li {
   list-style-type:none;
 }
-

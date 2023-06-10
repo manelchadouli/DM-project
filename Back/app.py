@@ -19,11 +19,9 @@ selector3, selected_features3 = load('MyFeatureSelection3.joblib')
 NslScaler = load('NslScaler.joblib') 
 
 model4= load('UKNNWithBestParamChi2.joblib')
-model5=load('UKNNWithBestParamRfFeatureSelection.joblib')
 model6=load('UKNNWithBestParamMutualInfoClassif.joblib')
 model7=load('UKNNWithBestParamRFE.joblib')
 selector4,selected_features4= load('Chi2Selection.joblib')
-selector5,selected_features5=load('RfSel.joblib')
 selector6,selected_features6=load('MutualInfoSelection.joblib')
 selector7,selected_features7=load('RFESel.joblib')
 UnswScaler =load('UnswScaler.joblib')
@@ -119,17 +117,17 @@ def predict():
             
             # Make predictions using the loaded model
             predictions = model.predict(df_selected)
-            labels = ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions, attaque)]
+            labels = ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions, attaque)]
             
 
              # Make predictions using the loaded model
             predictions2 = model2.predict(df_selected2)
-            labels2 = ['False Non DOS (False Negative) ' if (pred2 == 0 and att == 1) else 'False DoS (False positive) ' if (pred2 == 1 and att == 0) else ' True Nos dos ' if (pred2 == 0 and att == 0) else ' true dos ' if (pred2 == 1 and att == 1 ) else ' 'for pred2, att in zip(predictions2, attaque)]
+            labels2 = ['False Alarm' if (pred2 == 0 and att == 1) else 'False Dos' if (pred2 == 1 and att == 0) else 'True Nos Dos' if (pred2 == 0 and att == 0) else 'True Dos' if (pred2 == 1 and att == 1 ) else ' 'for pred2, att in zip(predictions2, attaque)]
 
 
              # Make predictions using the loaded model
             predictions3 = model3.predict(df_selected3)
-            labels3 = ['False Non DOS (False Negative) ' if (pred3 == 0 and att == 1) else 'False DoS (False positive) ' if (pred3 == 1 and att == 0) else ' True Nos dos ' if (pred3 == 0 and att == 0) else ' true dos ' if (pred3 == 1 and att == 1 ) else ' 'for pred3, att in zip(predictions3, attaque)]
+            labels3 = ['False Alarm' if (pred3 == 0 and att == 1) else 'False Dos' if (pred3 == 1 and att == 0) else 'True Nos Dos' if (pred3 == 0 and att == 0) else 'True Dos' if (pred3 == 1 and att == 1 ) else ' 'for pred3, att in zip(predictions3, attaque)]
 
             response_data = {"predictions": labels}
             response_data2 = {"predictions5": labels2}
@@ -235,30 +233,28 @@ def predictUnsw():
         y = dataSet.iloc[:,45]
          # Apply feature selection to the prediction data
         X_test_new4 = selector4.transform(x)
-        X_test_new5 = selector5.transform(x)
+       
         X_test_new6 = selector6.transform(x)
         X_test_new7 = selector7.transform(x)
         df_selected4 = x[selected_features4]
-        df_selected5 = x[selected_features5]
+      
         df_selected6=x[selected_features6]
         df_selected7=x[selected_features7]
          # Make predictions using the loaded model
         predictions4 = model4.predict(X_test_new4)
-        predictions5 = model5.predict(X_test_new5)
+     
         predictions6=model6.predict(X_test_new6)
         predictions7=model7.predict(X_test_new7)
         app.logger.info('Variable value: %s', predictions7)
-        labels4 =  ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions4, y)]
-        labels5 =  ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions5, y)]
-        labels6 =  ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions6, y)]
-        labels7 =  ['False Non DOS (False Negative) ' if (pred == 0 and att == 1) else 'False DoS (False positive) ' if (pred == 1 and att == 0) else ' True Nos dos ' if (pred == 0 and att == 0) else ' true dos ' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions7, y)]
+        labels4 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions4, y)]
+        labels6 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions6, y)]
+        labels7 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions7, y)]
         response_data4 = {"predictions4": labels4}
-        response_data5 = {"predictions5": labels5}
+    
         response_data6 = {"predictions6": labels6}
         response_data7 = {"predictions7": labels7}
         response_data_unsw = {
               "data4": response_data4,
-              "data5": response_data5,
               "data6": response_data6,
               "data7": response_data7,
                     }

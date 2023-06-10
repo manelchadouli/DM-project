@@ -177,9 +177,20 @@ label.label input[type="file"] {
 }
 
 .prediction-table th {
-  background-color: #2b2b2b;
+  background-color: #7D12FF;
   color: white;
 }
 .prediction-table li {
   list-style-type:none;
 }
+.goback{
+  /* margin-bottom: -500px; */
+  margin-left: 50px;
+  
+
+/* margin-bottom: 0px; */
+
+
+ 
+}
+

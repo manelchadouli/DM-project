@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { FaBackward } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const Predict = ()=>{
 
@@ -122,191 +124,197 @@ const handlePredictUnsw = async () => {
   
 
     return(
-          <div className='containers'>
-     
-      <div className='container-NSL' >
-       <h1>NSL-KDD</h1>
+          <><div className='containers'>
 
-      <div className='container-prediction'>
-        
-     {/* <input className='NSL-Input' type="file" accept=".json" onChange={handleFileUpload} />  */}
-     <label className="label">
-   <input type="file"  accept=".json" onChange={handleFileUpload} />
-   <span>{fileName || 'Select a file'}</span>
-  </label>
+        <div className='container-NSL'>
+          <h1>NSL-KDD</h1>
+
+          <div className='container-prediction'>
+
+            {/* <input className='NSL-Input' type="file" accept=".json" onChange={handleFileUpload} />  */}
+            <label className="label">
+              <input type="file" accept=".json" onChange={handleFileUpload} />
+              <span>{fileName || 'Select a file'}</span>
+            </label>
 
 
-      <button className='button-17' onClick={handlePredict}>Predict</button>
-      </div>
-      {predictions && (
-        <div className='prediction-tableee'>
-        <table className='prediction-table'>
-        <thead>
-          <tr>
-            <th>Selector</th>
-            <th>Classifier</th>
+            <button className='button-17' onClick={handlePredict}>Predict</button>
+          </div>
+          {predictions && (
+            <div className='prediction-tableee'>
+              <table className='prediction-table'>
+                <thead>
+                  <tr>
+                    <th>Selector</th>
+                    <th>Classifier</th>
 
-            <th>Prediction</th>
-            <th>Alarm</th>
-          </tr>
-        </thead>
-        <tbody>
-           
-              <tr >
-                <td>RFE</td>
-                <td>Decision Tree</td>
-                <td> {predictions.predictions1.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index}>Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td class="predict">  {predictions.predictions1.map((prediction, index) => (
-               <li key={index} style={{color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
-            ))}</td>
-              </tr>
-              
-              <tr >
-                <td>RandomForest </td>
-                <td>RandomForest </td>
-                <td> {predictions.predictions2.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index}>Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td class="predict">  {predictions.predictions2.map((prediction, index) => (
-              <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>
-            ))}</td>
-              </tr>
-              <tr >
-                <td>CFS</td>
-                <td>Decision Tree</td>
-                <td> {predictions.predictions3.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index}>Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td class="predict">{predictions.predictions3.map((prediction, index) => (
-              <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>  ))}
-              </td>
-              </tr>
-            
-          </tbody>
-        </table>
+                    <th>Prediction</th>
+                    <th>Alarm</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>RFE</td>
+                    <td>Decision Tree</td>
+                    <td> {predictions.predictions1.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td class="predict">  {predictions.predictions1.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
+                    ))}</td>
+                  </tr>
+
+                  <tr>
+                    <td>RandomForest </td>
+                    <td>RandomForest </td>
+                    <td> {predictions.predictions2.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td class="predict">  {predictions.predictions2.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>
+                    ))}</td>
+                  </tr>
+                  <tr>
+                    <td>CFS</td>
+                    <td>Decision Tree</td>
+                    <td> {predictions.predictions3.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td class="predict">{predictions.predictions3.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction}</li>))}
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {error && <p>Error: {error}</p>}
+
+
         </div>
-        )}
-        
-            {error && <p>Error: {error}</p>}
+        <div className='container-UNSW'>
+          <h1>UNSW-NB15</h1>
 
-      
-      </div>
-      <div className='container-UNSW' >
-       <h1>UNSW-NB15</h1>
+          <div className='container-prediction'>
 
-      <div className='container-prediction'>
-        
-     {/* <input className='NSL-Input' type="file" accept=".json" onChange={handleFileUpload} />  */}
-     <label className="label">
-   <input type="file"  accept=".json" onChange={handleFileUploadUnsw} />
-   <span>{fileName1 || 'Select a file'}</span>
-  </label>
+            {/* <input className='NSL-Input' type="file" accept=".json" onChange={handleFileUpload} />  */}
+            <label className="label">
+              <input type="file" accept=".json" onChange={handleFileUploadUnsw} />
+              <span>{fileName1 || 'Select a file'}</span>
+            </label>
 
 
-      <button className='button-17' onClick={handlePredictUnsw}>Predict</button>
-      </div>
-      {prediction1 && (
-        <div className='prediction-tableee'>
-        <table className='prediction-table'>
-        <thead>
-          <tr>
-          <th>Selector</th>
-            <th>Classifier</th>
+            <button className='button-17' onClick={handlePredictUnsw}>Predict</button>
+          </div>
+          {prediction1 && (
+            <div className='prediction-tableee'>
+              <table className='prediction-table'>
+                <thead>
+                  <tr>
+                    <th>Selector</th>
+                    <th>Classifier</th>
 
-            <th>Prediction</th>
-            <th>Alarm</th>
-          </tr>
-        </thead>
-        <tbody>
-           
-              <tr >
-                <td>CHI2</td>
-                <td>KNN</td>
-                <td> {prediction1.predictions1.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index}>Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td class="predict">  {prediction1.predictions1.map((prediction, index) => (
-               <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
-            ))}</td>
-              </tr>
-           
-              <tr >
-                <td>Mutual Info</td>
-                <td>KNN</td>
-                <td> {prediction1.predictions3.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index} >Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td class="predict">  {prediction1.predictions3.map((prediction, index) => (
-               <li key={index} style={{color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
-            ))}</td>
-              </tr>
-              <tr >
-                <td>RFE</td>
-                <td>KNN</td>
-                <td> {prediction1.predictions4.map((prediction, index) => {
-    if (prediction === 'False Alarm') {
-      return <li key={index}>Nos Dos</li>;
-    } else if(prediction === 'False Dos') {
-      // Add your alternative rendering here
-      return <li key={index}>Dos</li>;
-    }else if(prediction === 'True Nos Dos'){
-      return <li key={index}>Nos Dos</li>;
-    }else return <li key={index}>Dos</li>;
-  })}</td>
-                <td >  {prediction1.predictions4.map((prediction, index) => (
-               <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
-            ))}</td>
-              </tr>
-            
-          </tbody>
-        </table>
+                    <th>Prediction</th>
+                    <th>Alarm</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>CHI2</td>
+                    <td>KNN</td>
+                    <td> {prediction1.predictions1.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td class="predict">  {prediction1.predictions1.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
+                    ))}</td>
+                  </tr>
+
+                  <tr>
+                    <td>Mutual Info</td>
+                    <td>KNN</td>
+                    <td> {prediction1.predictions3.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td class="predict">  {prediction1.predictions3.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
+                    ))}</td>
+                  </tr>
+                  <tr>
+                    <td>RFE</td>
+                    <td>KNN</td>
+                    <td> {prediction1.predictions4.map((prediction, index) => {
+                      if (prediction === 'False Alarm') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else if (prediction === 'False Dos') {
+                        // Add your alternative rendering here
+                        return <li key={index}>Dos</li>;
+                      } else if (prediction === 'True Nos Dos') {
+                        return <li key={index}>Nos Dos</li>;
+                      } else return <li key={index}>Dos</li>;
+                    })}</td>
+                    <td>  {prediction1.predictions4.map((prediction, index) => (
+                      <li key={index} style={{ color: prediction === 'False Alarm' ? '#ee4b4c' : '#26C6D0' }}>{prediction} </li>
+                    ))}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {error && <p>Error: {error}</p>}
+
         </div>
-        )}
-        
-            {error && <p>Error: {error}</p>}
+
+        {/* <link to='/' ></><span>go back</span></link> */}
+
 
       </div>
-      
-
-      
-    </div>
+          <Link to="/" className='goback'>
+            <FaBackward />
+            <span>Home</span>
+          </Link>
+        </>
 
 
 

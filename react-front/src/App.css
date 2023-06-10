@@ -1,13 +1,87 @@
-.App {
+.containers {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  background-color: white;
+  
+} 
+/* background-image: url("d1.png"); /* Replace "your-image-url.jpg" with the URL or path to your desired image */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+
+.container-NSL,
+.container-UNSW {
+  width: 45%;
+  margin: 0 3%;
+  padding: 5%;
+  background-color: white;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-prediction {
+  position: relative;
+  display: grid;
+  margin-bottom: 10%;
+  gap: 20px;
+  width: 90%;
+  left: 5%;
+  right: 5%;
+  height: 25%;
+}
+
+.prediction-tableee {
+  position: relative;
+  height: 60%;
+  width: 100%;
+}
+
+.prediction-table {
+  position: relative;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .containers {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container-NSL,
+  .container-UNSW {
+    width: 90%;
+    margin: 3% auto;
+  }
+
+  .prediction-tableee {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.container-prediction p{
+  font-weight: bold;
+  color: #7D12FF;
   text-align: center;
 }
 
+h1{
+  position: relative;
+  margin-bottom: 5%;
+  font-weight: bolder;
+  color: #7D12FF;
+  text-align: center;
+}
 
 label.label input[type="file"] {
   position: absolute;
   top: -1000px;
 }
+
 .label {
+  position: relative;
   cursor: pointer;
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -16,74 +90,24 @@ label.label input[type="file"] {
   background: #dddddd;
   display: inline-block;
 }
+
 .label:hover {
-  background: #a368eb;
+  background: #565656;
+  color: whitesmoke;
 }
+
 .label:active {
   background: #9fa1a0;
 }
+
 .label:invalid+span {
   color: #000000;
 }
+
 .label:valid+span {
   color: #ffffff;
 }
 
-
-
-.container-NSL{
-width: 450px;
-height: 570px;
-margin-top: 3%;
-margin-left: 3%;
-padding: 5%;
-background-color: white;
-float: left;
-border-radius: 5%;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-
-.container-UNSW{
-  width: 450px;
- 
-height: 470px;
-margin-top: 3%;
-margin-right: 3%;
-padding: 5%;
-background-color: white;
-float: right;
-border-radius: 5%;
-
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.container-prediction{
-  display: grid;
-  grid-template-columns: 110%;
-  gap: 60px;
-  padding: 7%;
-}
-
-
-.container-prediction p{
-  font-weight: bold;
-  color: #7D12FF;
-  text-align: center;
-}
-
-.container-NSL h1{
-  font-weight: bolder;
-  color: #7D12FF;
-  text-align: center;
-}
-.container-UNSW h1{
-  font-weight: bolder;
-  color: #7D12FF;
-  text-align: center;
-}
-
-/* CSS */
 .button-17 {
   align-items: center;
   appearance: none;
@@ -151,13 +175,22 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
-tbody td {
-  text-align: center;
+
+.prediction-table th {
+  background-color: #7D12FF;
+  color: white;
 }
-thead th, tfoot th {
-color:#7D12FF;
+.prediction-table li {
+  list-style-type:none;
 }
-.prediction-tableee{
-  height: 160px;
-  overflow: scroll;
+.goback{
+  /* margin-bottom: -500px; */
+  margin-left: 50px;
+  
+
+/* margin-bottom: 0px; */
+
+
+ 
 }
+

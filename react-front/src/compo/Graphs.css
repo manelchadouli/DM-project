@@ -25,23 +25,43 @@
   }
 
   .UNSW_Imp{
-    display: block;
-    /*justify-content: space-around; */
+    display: inline-block;
     align-items: center;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 250px;
   }
-  .UNSW_Imp img{
+  /* .UNSW_Imp img{
     width: 80%;
-    transition: transform 0.3s ease; /* Add a smooth animation transition */
+    transition: transform 0.3s ease;
     height: auto;
   }
   .UNSW_Imp:hover img{
-    transform: scale(1.1); /* Add an animated effect on hover */
+    transform: scale(1.1); 
   }
   @media (min-width: 768px) {
     .UNSW_Imp img {
       max-width: 100%;
     }
+  } */
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
   }
+  .chart-container{
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 180px;
+   
   
+
+  }
+  .chart{
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: 20px;
+  
+  
+  }

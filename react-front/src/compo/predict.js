@@ -159,12 +159,12 @@ const handlePredictUnsw = async () => {
                     <td>Decision Tree</td>
                     <td> {predictions.predictions1.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td class="predict">  {predictions.predictions1.map((prediction, index) => (
@@ -177,12 +177,12 @@ const handlePredictUnsw = async () => {
                     <td>RandomForest </td>
                     <td> {predictions.predictions2.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td class="predict">  {predictions.predictions2.map((prediction, index) => (
@@ -194,12 +194,12 @@ const handlePredictUnsw = async () => {
                     <td>Decision Tree</td>
                     <td> {predictions.predictions3.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td class="predict">{predictions.predictions3.map((prediction, index) => (
@@ -249,12 +249,12 @@ const handlePredictUnsw = async () => {
                     <td>KNN</td>
                     <td> {prediction1.predictions1.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td class="predict">  {prediction1.predictions1.map((prediction, index) => (
@@ -267,12 +267,12 @@ const handlePredictUnsw = async () => {
                     <td>KNN</td>
                     <td> {prediction1.predictions3.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td class="predict">  {prediction1.predictions3.map((prediction, index) => (
@@ -284,12 +284,12 @@ const handlePredictUnsw = async () => {
                     <td>KNN</td>
                     <td> {prediction1.predictions4.map((prediction, index) => {
                       if (prediction === 'False Alarm') {
-                        return <li key={index}>Nos Dos</li>;
-                      } else if (prediction === 'False Dos') {
+                        return <li key={index}> Dos</li>;
+                      } else if (prediction === 'False Non Dos') {
                         // Add your alternative rendering here
-                        return <li key={index}>Dos</li>;
-                      } else if (prediction === 'True Nos Dos') {
-                        return <li key={index}>Nos Dos</li>;
+                        return <li key={index}>Non Dos</li>;
+                      } else if (prediction === 'True Non Dos') {
+                        return <li key={index}>Non Dos</li>;
                       } else return <li key={index}>Dos</li>;
                     })}</td>
                     <td>  {prediction1.predictions4.map((prediction, index) => (

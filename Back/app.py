@@ -117,17 +117,17 @@ def predict():
             
             # Make predictions using the loaded model
             predictions = model.predict(df_selected)
-            labels = ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions, attaque)]
+            labels = ['False Non Dos' if (pred == 0 and att == 1) else 'False Alarm' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions, attaque)]
             
 
              # Make predictions using the loaded model
             predictions2 = model2.predict(df_selected2)
-            labels2 = ['False Alarm' if (pred2 == 0 and att == 1) else 'False Dos' if (pred2 == 1 and att == 0) else 'True Nos Dos' if (pred2 == 0 and att == 0) else 'True Dos' if (pred2 == 1 and att == 1 ) else ' 'for pred2, att in zip(predictions2, attaque)]
+            labels2 = ['False Non Dos' if (pred2 == 0 and att == 1) else 'False Alarm' if (pred2 == 1 and att == 0) else 'True Nos Dos' if (pred2 == 0 and att == 0) else 'True Dos' if (pred2 == 1 and att == 1 ) else ' 'for pred2, att in zip(predictions2, attaque)]
 
 
              # Make predictions using the loaded model
             predictions3 = model3.predict(df_selected3)
-            labels3 = ['False Alarm' if (pred3 == 0 and att == 1) else 'False Dos' if (pred3 == 1 and att == 0) else 'True Nos Dos' if (pred3 == 0 and att == 0) else 'True Dos' if (pred3 == 1 and att == 1 ) else ' 'for pred3, att in zip(predictions3, attaque)]
+            labels3 = ['False Non Dos' if (pred3 == 0 and att == 1) else 'False Alarm' if (pred3 == 1 and att == 0) else 'True Nos Dos' if (pred3 == 0 and att == 0) else 'True Dos' if (pred3 == 1 and att == 1 ) else ' 'for pred3, att in zip(predictions3, attaque)]
 
             response_data = {"predictions": labels}
             response_data2 = {"predictions5": labels2}
@@ -246,9 +246,9 @@ def predictUnsw():
         predictions6=model6.predict(X_test_new6)
         predictions7=model7.predict(X_test_new7)
         app.logger.info('Variable value: %s', predictions7)
-        labels4 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions4, y)]
-        labels6 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions6, y)]
-        labels7 =  ['False Alarm' if (pred == 0 and att == 1) else 'False Dos' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions7, y)]
+        labels4 =  ['False Non Dos' if (pred == 0 and att == 1) else 'False Alarm' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions4, y)]
+        labels6 =  ['False Non Dos' if (pred == 0 and att == 1) else 'False Alarm' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions6, y)]
+        labels7 =  ['False Non Dos' if (pred == 0 and att == 1) else 'False Alarm' if (pred == 1 and att == 0) else 'True Nos Dos' if (pred == 0 and att == 0) else 'True Dos' if (pred == 1 and att == 1 ) else ' 'for pred, att in zip(predictions7, y)]
         response_data4 = {"predictions4": labels4}
     
         response_data6 = {"predictions6": labels6}

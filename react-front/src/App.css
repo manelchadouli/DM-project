@@ -3,7 +3,7 @@
   justify-content: space-between;
   height: 100vh;
   align-items: center;
-  background-color: white;
+  background-color: #2b2b2b;
   
 } 
 /* background-image: url("d1.png"); /* Replace "your-image-url.jpg" with the URL or path to your desired image */
@@ -13,7 +13,7 @@
 .container-NSL,
 .container-UNSW {
   width: 45%;
-  margin: 0 3%;
+  margin-left: 30%;
   padding: 5%;
   background-color: white;
   border-radius: 5%;
@@ -63,7 +63,7 @@
 
 .container-prediction p{
   font-weight: bold;
-  color: #7D12FF;
+  color: #ee4b4c;
   text-align: center;
 }
 
@@ -71,7 +71,7 @@ h1{
   position: relative;
   margin-bottom: 5%;
   font-weight: bolder;
-  color: #7D12FF;
+  color: #ee4b4c;
   text-align: center;
 }
 
@@ -111,7 +111,7 @@ label.label input[type="file"] {
 .button-17 {
   align-items: center;
   appearance: none;
-  background-color: #7D12FF;
+  background-color: #ee4b4c;
   border-radius: 24px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
@@ -142,7 +142,7 @@ label.label input[type="file"] {
 }
 
 .button-17:hover {
-  background: #7D12FF;
+  background: #f36667;
   color: white;
 }
 
@@ -177,20 +177,9 @@ label.label input[type="file"] {
 }
 
 .prediction-table th {
-  background-color: #7D12FF;
+  background-color: #2b2b2b;
   color: white;
 }
 .prediction-table li {
   list-style-type:none;
 }
-.goback{
-  /* margin-bottom: -500px; */
-  margin-left: 50px;
-  
-
-/* margin-bottom: 0px; */
-
-
- 
-}
-
